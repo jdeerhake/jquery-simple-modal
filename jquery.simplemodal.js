@@ -1,7 +1,7 @@
 /*!
  * $ Simple Modal plugin
  * Author: John Deerhake, @jdeerhake
- * Version 0.0.1
+ * Version 0.0.2
  * Licensed under the MIT license
  */
 
@@ -29,7 +29,7 @@
         createBackdrop();
       }
       this.modal = {};
-      this.modal.el = $("<div />", { "class" :  this.class }).appendTo("body");
+      this.modal.el = $("<div />", { "class" :  this["class"] }).appendTo("body");
       this.modal.el.append(this.el.remove().show());
       this.bindings();
     },
@@ -57,7 +57,7 @@
         this.trigger.on( "click", triggerShow );
       }
 
-      this.el.find(".close").on( "click")
+      this.el.find(".close").on( "click" );
     },
     show : function () {
       if( this.isShown ) { return false; }

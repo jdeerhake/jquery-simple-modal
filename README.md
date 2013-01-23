@@ -1,6 +1,6 @@
 jQuery simpleModal
 ================
-v0.0.1
+v0.0.2
 
 A small (~ 100 LoC) jQuery plugin for creating a basic modal.  It is shown and hidden using custom jQuery events `show` and `hide` and it is autmatically centered (note the starter CSS for this work correctly).
 
@@ -62,3 +62,13 @@ Hide the modal programatically
     $( "#content" ).trigger( "hide" );
 
 To hide the modal on click you can either set up a click handler using the code above, or just give an element in the modal's content a class of `close` and it will automatically be set up to close the modal on click.  Additionally clicking the backdrop or hitting the `Esc` key will close the modal.
+
+Use with Ajax:
+
+Although it doesn't have Ajax support baked in, it's pretty easy to use Ajax content in a modal with jQuery:
+
+    $( "#trigger" ).on( "click", function() {
+      $.get( "example.html" ).done(function( html ) { $( html ).simpleModal().trigger( "show" ); });
+    });
+
+Using this, you can hook loading animations into the callbacks as well.
