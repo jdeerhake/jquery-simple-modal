@@ -1,7 +1,7 @@
 /*!
  * $ Simple Modal plugin
  * Author: John Deerhake, @jdeerhake
- * Version 0.0.2
+ * Version 0.0.3
  * Licensed under the MIT license
  */
 

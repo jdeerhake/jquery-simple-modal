@@ -1,7 +1,7 @@
 {
     "name": "simpleModal",
-    "version": "0.0.2",
-    "title": "jQuery simpleModal plugin",
+    "version": "0.0.3",
+    "title": "simpleModal lightweight modal plugin",
     "description": "Lightweight jQuery plugin for creating modals",
     "keywords": [
         "modal",
