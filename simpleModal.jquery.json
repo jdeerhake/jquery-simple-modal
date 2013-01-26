@@ -1,0 +1,28 @@
+{
+    "name": "simpleModal",
+    "version": "0.0.2",
+    "title": "jQuery simpleModal plugin",
+    "description": "Lightweight jQuery plugin for creating modals",
+    "keywords": [
+        "modal",
+        "ui",
+        "simple",
+        "small",
+        "lightweight"
+    ],
+    "author": {
+        "name": "John Deerhake",
+        "url": "https://github.com/jdeerhake",
+        "email" : "jdeerhake@gmail.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+        }
+    ],
+    "homepage": "https://github.com/jdeerhake/jquery-simple-modal",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
