@@ -2,7 +2,7 @@ jQuery simpleModal
 ================
 v0.0.2
 
-A small (~ 100 LoC) jQuery plugin for creating a basic modal.  It is shown and hidden using custom jQuery events `show` and `hide` and it is autmatically centered (note the starter CSS for this work correctly).
+A small (~ 100 LoC) jQuery plugin for creating a basic modal.  It is shown and hidden using custom jQuery events `show` and `hide` and it is automatically centered (note the starter CSS for this work correctly).
 
 Usage
 -----
