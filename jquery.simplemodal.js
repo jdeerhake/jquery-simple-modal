@@ -83,13 +83,13 @@
       return false;
     },
     center : function () {
-      var width = this.modal.el.outerWidth(),
-        height = this.modal.el.outerHeight();
+      var width = Math.floor(this.modal.el.outerWidth()),
+        height = Math.floor(this.modal.el.outerHeight());
 
       if(width != this.modal.width || height != this.modal.height) {
         this.modal.el.css({
-          marginTop : height / -2,
-          marginLeft : width / -2
+          marginTop : Math.floor(height / -2),
+          marginLeft : Math.floor(width / -2)
         });
         this.modal.width = width;
         this.modal.height = height;
