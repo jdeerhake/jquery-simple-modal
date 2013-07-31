@@ -65,6 +65,7 @@
       backdrop.show();
       this.modal.el.css({ opacity : 0 }).show();
       this.centerer = setInterval( $.proxy( this, "center" ), 500 );
+      this.center();
 
       setTimeout( $.proxy( function() {
         this.center();
