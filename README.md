@@ -72,3 +72,12 @@ Although it doesn't have Ajax support baked in, it's pretty easy to use Ajax con
     });
 
 Using this, you can hook loading animations into the callbacks as well.
+
+
+Images
+------
+
+The modal only attempts to center itself when it is shown.  Therefore, if its content changes size (e.g. an image loads) it will be off-center.  The are a few strategies to avoid this:
+  - Specify the image width and height via CSS or attributes
+  - Wait until the image is loaded to display the modal (as is used in [the image example](https://github.com/jdeerhake/jquery-simple-modal/blob/master/example.html))
+  - Preload the image on page load
