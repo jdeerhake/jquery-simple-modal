@@ -34,8 +34,10 @@
       this.bindings();
     },
     bindings : function () {
-      this.el.on( "show", $.proxy( this, "show" ) );
-      this.el.on( "hide", $.proxy( this, "hide" ) );
+      this.el.on( "show",   $.proxy( this, "show" ) );
+      this.el.on( "hide",   $.proxy( this, "hide" ) );
+      this.el.on( "change", $.proxy( this, "center" ) );
+
 
       var triggerShow = $.proxy( function() {
         this.el.trigger("show");
@@ -63,7 +65,7 @@
       if( this.isShown ) { return false; }
       this.isShown = true;
       backdrop.show();
-      this.modal.el.css({ opacity : 0 }).show();      
+      this.modal.el.css({ opacity : 0 }).show();
       this.center();
       this.modal.el.animate({ opacity : 1 }, FADE_TIME);
       return false;

@@ -40,40 +40,111 @@
       display: block;
       margin-bottom: 20px;
     }
+
+    .image_gallery img {
+      float: left;
+      margin: 10px;
+    }
+
+    .prev {
+      float: left;
+    }
+
+    .next {
+      float: right;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <a href="#" id="show_modal">Modal with on-page data</a>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="jquery.simplemodal.js"></script>
+
+  <h1>Example Usage</h1>
+
+  <h2>Text</h2>
+  <a href="#" id="show_modal">Modal with text content</a>
   <div class="modal_content">
     This is a modal.
   </div>
+  <script>
+    $( ".modal_content" ).simpleModal({ trigger : $( "#show_modal" ) });
+  </script>
 
 
-  <a href="#" id="show_ajax_modal">Modal with ajax data</a>
+  <h2>Ajax</h2>
+  <a href="#" id="show_ajax_modal">Modal with Ajax data</a>
   <div id="ajax_content">
     This is ajax data.
   </div>
-
-  <a class="gallery modal" href="http://farm3.staticflickr.com/2890/9329593054_453d58bd8b_b.jpg">
-    <img src="http://farm3.staticflickr.com/2890/9329593054_453d58bd8b_m.jpg">
-  </a>
-
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  <script src="jquery.simplemodal.js"></script>
   <script>
-    $( ".modal_content" ).simpleModal({ trigger : $( "#show_modal" ) });
-
     $( "#show_ajax_modal" ).on( "click", function() {
+      // Show spinner
       $.get( "example.html" ).done(function( html ) {
+        // Hide spinner
         $( html ).filter( "#ajax_content" ).simpleModal().trigger( "show" );
       });
     });
+  </script>
 
-    $( ".gallery.modal" ).on( "click", function() {
-      var img = $( this ).attr( "href" );
+  <h2>Image</h2>
+  <a class="image modal" href="http://farm3.staticflickr.com/2890/9329593054_453d58bd8b_b.jpg">
+    <img src="http://farm3.staticflickr.com/2890/9329593054_453d58bd8b_m.jpg">
+  </a>
+  <script>
+    $( ".image.modal" ).on( "click", function() {
+      var img = $( "<img>", { src : $( this ).attr( "href" ) }).simpleModal();
+      // Show spinner
+      img.on( "load", function() {
+        // Hide spinner
+        img.trigger( "show" );
+      });
+      return false;
+    });
+  </script>
 
-      $( "<img src='" + img + "'>" ).simpleModal().trigger( "show" );
+
+  <h2>Image Gallery</h3>
+  <div class="image_gallery">
+    <a href="http://farm4.staticflickr.com/3780/9326801747_0645e30c38_b.jpg">
+      <img src="http://farm4.staticflickr.com/3780/9326801747_0645e30c38_m.jpg">
+    </a>
+    <a href="http://farm9.staticflickr.com/8407/8940502483_463f51925d_b.jpg">
+      <img src="http://farm9.staticflickr.com/8407/8940502483_463f51925d_m.jpg">
+    </a>
+    <a href="http://farm4.staticflickr.com/3729/8962974147_9d7638ef57_b.jpg">
+      <img src="http://farm4.staticflickr.com/3729/8962974147_9d7638ef57_m.jpg">
+    </a>
+  </div>
+  <script>
+    $( ".image_gallery" ).on( "click", "a", function() {
+      var link = $( this ),
+        img = $( "<img>", { src : $( this ).attr( "href" ) }).simpleModal(),
+        controls = $( "<div class='controls'><a class='prev'>Prev</a><a class='next'>Next</a></div>" ).insertAfter( img );
+
+      hideControls();
+
+      // Show spinner
+      img.on( "load", function() {
+        // Hide spinner
+        img.trigger( "show" );
+        img.trigger( "change" );
+      });
+
+      controls.on( "click", "a", function() {
+        link = $( this ).is( ".next" ) ? link.next() : link.prev();
+        img.prop( "src", link.prop( "href" ) );
+        hideControls();
+      });
+
+      function hideControls() {
+        controls.find( "a" ).show();
+        if( !link.next().length ) { controls.find( ".next" ).hide(); }
+        if( !link.prev().length ) { controls.find( ".prev" ).hide(); }
+      }
 
       return false;
     });
