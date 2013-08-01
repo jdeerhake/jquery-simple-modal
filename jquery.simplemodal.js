@@ -63,20 +63,14 @@
       if( this.isShown ) { return false; }
       this.isShown = true;
       backdrop.show();
-      this.modal.el.css({ opacity : 0 }).show();
-      this.centerer = setInterval( $.proxy( this, "center" ), 500 );
+      this.modal.el.css({ opacity : 0 }).show();      
       this.center();
-
-      setTimeout( $.proxy( function() {
-        this.center();
-        this.modal.el.animate({ opacity : 1 }, FADE_TIME);
-      }, this ), 50);
+      this.modal.el.animate({ opacity : 1 }, FADE_TIME);
       return false;
     },
     hide : function () {
       if( !this.isShown ) { return false; }
       this.isShown = false;
-      clearInterval( this.centerer );
       backdrop.fadeOut(FADE_TIME);
       this.modal.el.fadeOut(FADE_TIME, $.proxy( function () {
         this.el.trigger("hidden");
