@@ -31,11 +31,7 @@ Very basic starter CSS that will make the modal function as expected:
 
     .simple-modal-box {
       z-index: 100;
-
-      /* Position values needed to center the modal box */
       position: fixed;
-      top: 50%;
-      left: 50%;
     }
 
     .simple-modal-backdrop {
