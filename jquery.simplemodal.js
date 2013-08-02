@@ -32,7 +32,7 @@
       this.modal.el = $("<div />", { "class" :  this["class"] }).appendTo("body");
       this.modal.el
         .append( this.el.remove().show() )
-        .css({ left: 0, top: 0, positon: "fixed" }); /* Legacy fix */
+        .css({ left: 0, top: 0, position: "fixed" }); /* Legacy fix */
       this.bindings();
     },
     bindings : function () {
