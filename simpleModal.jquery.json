@@ -1,6 +1,6 @@
 {
     "name": "simpleModal",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "title": "simpleModal lightweight modal plugin",
     "description": "Lightweight jQuery plugin for creating modals",
     "keywords": [
@@ -18,7 +18,7 @@
     "licenses": [
         {
             "type": "MIT",
-            "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+            "url": "https://github.com/jdeerhake/jquery-simple-modal/blob/master/MIT-LICENSE.txt"
         }
     ],
     "homepage": "https://github.com/jdeerhake/jquery-simple-modal",
