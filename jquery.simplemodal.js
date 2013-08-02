@@ -30,7 +30,9 @@
       }
       this.modal = {};
       this.modal.el = $("<div />", { "class" :  this["class"] }).appendTo("body");
-      this.modal.el.append(this.el.remove().show());
+      this.modal.el
+        .append( this.el.remove().show() )
+        .css({ left: 0, top: 0, position: "fixed" }); /* Legacy fix */
       this.bindings();
     },
     bindings : function () {
@@ -80,17 +82,13 @@
       return false;
     },
     center : function () {
-      var width = Math.floor(this.modal.el.outerWidth()),
-        height = Math.floor(this.modal.el.outerHeight());
-
-      if(width != this.modal.width || height != this.modal.height) {
-        this.modal.el.css({
-          marginTop : Math.floor(height / -2),
-          marginLeft : Math.floor(width / -2)
-        });
-        this.modal.width = width;
-        this.modal.height = height;
-      }
+      this.modal.el.css({
+        marginLeft  : -1 * Math.floor( this.modal.el.outerWidth() / 2 ),
+        marginTop   : -1 * Math.floor( this.modal.el.outerHeight() / 2 ),
+        position    : "fixed",
+        top         : "50%",
+        left        : "50%"
+      });
     }
   };
 
