@@ -31,6 +31,7 @@ Very basic starter CSS that will make the modal function as expected:
 
     .simple-modal-box {
       z-index: 100;
+      position: fixed;
     }
 
     .simple-modal-backdrop {
