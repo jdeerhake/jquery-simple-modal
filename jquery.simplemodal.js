@@ -80,17 +80,13 @@
       return false;
     },
     center : function () {
-      var width = Math.floor(this.modal.el.outerWidth()),
-        height = Math.floor(this.modal.el.outerHeight());
-
-      if(width != this.modal.width || height != this.modal.height) {
-        this.modal.el.css({
-          marginTop : Math.floor(height / -2),
-          marginLeft : Math.floor(width / -2)
-        });
-        this.modal.width = width;
-        this.modal.height = height;
-      }
+      this.modal.el.css({
+        marginLeft  : -1 * Math.floor( this.modal.el.outerWidth() / 2 ),
+        marginTop   : -1 * Math.floor( this.modal.el.outerHeight() / 2 ),
+        position    : "fixed",
+        top         : "50%",
+        left        : "50%"
+      });
     }
   };
 
