@@ -1,0 +1,93 @@
+{
+  "predef": [
+    "jQuery"
+  ],
+
+  // No bitwise operators
+  "bitwise" : true,
+
+  // All var names camelcase
+  "camelcase" : true,
+
+  // While/If statements need blocks with curly braces
+  "curly" : true,
+
+  // Only use ===
+  "eqeqeq" : true,
+
+  // Don't use for-in blocks without checking hasOwnProperty
+  "forin" : true,
+
+  // IIFE should be wrapped in parens
+  "immed" : true,
+
+  // Indent spaces
+  "indent" : 2,
+
+  // Whitepsace
+  "white" : false,
+
+  // Don't use vars or functions before they're defined
+  "latedef" : false,
+
+  // Constructor functions should be capitalized
+  "newcap" : true,
+
+  // Don't use arguments.caller & callee
+  "noarg" : true,
+
+  // Warn on empty blocks
+  "noempty" : false,
+
+  // All constructor calls must be saved
+  "nonew" : false,
+
+  // Don't use increment/decrement
+  "plusplus" : false,
+
+  // Quote marks to use
+  "quotmark" : "double",
+
+  // Don't use . in regex
+  "regexp" : false,
+
+  // Don't use undefined variables
+  "undef" : true,
+
+  // Don't declare variables and not use them
+  "unused" : true,
+
+  // Force 'use strict'
+  "strict" : false,
+
+  // No trailing whitespace
+  "trailing" : true,
+
+  // Max params per function
+  "maxparams" : 3,
+
+  // Max depth of code blocks
+  "maxdepth" : false,
+
+  // Max statements per function
+  "maxstatements" : false,
+
+  // Voodoo magic
+  "maxcomplexity" : false,
+
+  // Max length of a line
+  "maxlen" : false,
+
+  // Assume browser APIs
+  "browser" : true,
+
+  // Assume console, alert
+  "devel" : false,
+
+  // Assume non-standard but present functions (escape, unescape)
+  "nonstandard" : true,
+
+  // Don't warn about not using dot notation
+  "sub" : true
+
+}
