@@ -1,0 +1,28 @@
+{
+  "name": "jquery-simple-modal",
+  "version": "0.0.7",
+  "description": "Lightweight jQuery plugin for creating modals",
+  "main": "jquery.simplemodal.js",
+  "scripts": {
+    "start": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jdeerhake/jquery-simple-modal.git"
+  },
+  "keywords": [
+    "modal",
+    "ui",
+    "simple",
+    "small",
+    "lightweight",
+    "jquery"
+  ],
+  "author": "John Deerhake <jdeerhake@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
