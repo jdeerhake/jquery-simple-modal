@@ -77,3 +77,15 @@ The modal only attempts to center itself when it is shown.  Therefore, if its co
   - Specify the image width and height via CSS or attributes
   - Wait until the image is loaded to display the modal (as is used in [the image example](https://github.com/jdeerhake/jquery-simple-modal/blob/master/example.html))
   - Preload the image on page load
+
+
+Building
+--------
+
+You can re-build the minified version, using these commands:
+
+```
+npm install
+npm install -g grunt-cli
+grunt
+```

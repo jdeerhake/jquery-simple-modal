@@ -67,9 +67,8 @@
       if( this.isShown ) { return false; }
       this.isShown = true;
       backdrop.show();
-      this.modal.el.css({ opacity : 0 }).show();
       this.center();
-      this.modal.el.animate({ opacity : 1 }, FADE_TIME);
+      this.modal.el.fadeIn(FADE_TIME).show();
       return false;
     },
     hide : function () {
