@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 
         'clean': {
             'default': {
-                'src': ['jquery.simplemodal-<%= pkg.version %>.min.js']
+                'src': ['jquery.simplemodal-*.min.js']
             }
         }
     });
