@@ -1,0 +1,4 @@
+Authors ordered by first contribution.
+
+John Deerhake <jdeerhake@gmail.com>
+David Konsumer <konsumer@jetboystudio.com>
