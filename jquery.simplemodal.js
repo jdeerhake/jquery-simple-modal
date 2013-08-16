@@ -53,11 +53,10 @@
       if( this.isShown ) { return false; }
       this.isShown = true;
       backdrop().show();
-      this.modal.el.css({ opacity : 0 }).show();
       this.center();
-      this.modal.el.animate({ opacity : 1 }, FADE_TIME, $.proxy(function() {
+      this.modal.el.fadeIn( FADE_TIME, $.proxy(function() {
         this.el.trigger( "shown" );
-      }, this ) );
+      }, this ));
       return false;
     },
     hide : function () {
